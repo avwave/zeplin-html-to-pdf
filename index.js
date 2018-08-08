@@ -3,6 +3,7 @@ process.env.PATH = `${process.env.PATH}:${process.env.LAMBDA_TASK_ROOT}`;
 const wkhtmltopdf = require("./utils/wkhtmltopdf");
 const errorUtil = require("./utils/error");
 const MemoryStream = require('memorystream');
+
 const AWS = require('aws-sdk');
 
 exports.handler = function handler(event, context, callback) {
@@ -41,7 +42,7 @@ exports.handler = function handler(event, context, callback) {
             }
             callback(null, {
                 result: data,
-                data: buffer
+                data: Buffer.from(buffer).toString('base64')
             });
         });
     }).catch(error => {
