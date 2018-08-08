@@ -16,8 +16,8 @@
   "bugs": {
     "url": "https://github.com/zeplin/zeplin-html-to-pdf/issues"
   },
-  "devDependencies": {
-    "eslint": "^4.0.0",
-    "eslint-config-zeplin": "git+ssh://git@github.com/zeplin/eslint-config-zeplin.git#v1.x.x"
+  "dependencies": {
+    "aws-sdk": "^2.286.2",
+    "memorystream": "^0.3.1"
   }
 }
